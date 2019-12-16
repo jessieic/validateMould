@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript"  src="scripts/jquery-1.8.0.min.js"></script>
+        <script type="text/javascript"  src="scripts/jquery.validate.min.js"></script>
+        <style> 
+
+            .item{
+
+
+
+            }
+
+            .item .item-label{
+
+
+            }
+
+            .item-text{
+
+
+
+            }
+
+            .item-select{
+
+
+
+            }
+
+            .item-submit{
+
+
+
+            }
+
+            input.error{
+
+                border: 1px solid #E6594E;
+
+            }
+
+            input.highlight{
+
+                border: 1px solid #7abd54;
+
+            }
+
+            label.error,label.tip{
+
+
+                color: red;
+
+                /*background: url('error.png') no-repeat left center;*/
+
+            }
+
+            label.tip{
+
+                color: #aaa;
+
+                /*background: url('tip.png') no-repeat left center;*/
+
+            }
+
+            label.valid{
+
+                /*        background: url('valid.png') no-repeat left center;*/
+
+                width: 32px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div name ="form-content">
+            <form action="#" method="post" id="regForm">
+                <p class="item">
+                    <label for="username" class="item-label">用户名:</label>
+                    <input type="text" id="username" name="username" class="item-text" placeholder="设置用户名"autocomplete="off" tip="">
+                </p>
+                <p class="item">
+                    <label for="password" class="item-label">密码:</label>
+                    <input type="password" id="password" name="password" class="item-text" placeholder="设置密码"tip="">
+                </p>
+                <p class="item">
+                    <label for="password" class="item-label">确认密码:</label>
+                    <input type="password" name="repassword" class="item-text" placeholder="设置确认密码">
+                </p>
+                <p class="item">
+                    <label for="amt" class="item-label">金额:</label>
+                    <input type="text" id="amt" name="amt" class="item-text" placeholder="交易金额"tip="">
+                </p>
+                <p class="item">
+                    <input type="submit" value="提交" class="item-submit">
+                </p>
+            </form>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $("#regForm").validate({
+                    rules: {
+
+                        username: {
+
+                            required: true,
+
+                            minlength: 2
+
+                        },
+
+                        password: {
+
+                            required: true,
+
+                            minlength: 6,
+
+                            maxlength: 16
+
+                        },
+
+                        repassword: {
+
+                            required: true,
+
+                            equalTo: "#password"
+
+                        },
+
+                        amt: {
+
+                            required: true,
+
+                            amtCheck: true
+
+                        }
+
+                    },
+                });
+            });
+        </script>
+    </body>
+</html>
